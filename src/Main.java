@@ -63,12 +63,12 @@ public class Main {
     });
 
     for(Ride currRide: rides) {
-      int minTime = Integer.MAX_VALUE;
+      Double maxscore = 0.0;
       Vehicle minVehicle = vehicles[0];
       for (Vehicle currVehicle : vehicles) {
-        int temptime = currVehicle.cost(currRide);
-        if (minTime > temptime) {
-          minTime = temptime;
+        Double rate = 1.0 * currRide.score(currVehicle.cost(currRide)) / (currVehicle.cost(currRide) + currRide.cost);
+        if (maxscore < rate) {
+          maxscore = rate;
           minVehicle = currVehicle;
         }
       }

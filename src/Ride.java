@@ -24,8 +24,11 @@ public class Ride {
 
   public int score(int t) {
     int score = cost;
-    if(t == earlierTime){
+    if(t <= earlierTime){
       score += BONUS;
+    }
+    if(t+cost > finalTime){
+      score = 0;
     }
     return score;
   }
