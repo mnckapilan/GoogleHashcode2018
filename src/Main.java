@@ -11,8 +11,15 @@ public class Main {
 
 
   public static void main(String[] args) throws FileNotFoundException {
-    for (int i = 0; i < args.length; i += 2) {
-      String[] files = new String[]{args[i],args[i+1]};
+    String[] list = new String[] {
+        "input/a.in", "output/a.out",
+        "input/b.in", "output/b.out",
+        "input/c.in", "output/c.out",
+        "input/d.in", "output/d.out",
+        "input/e.in", "output/e.out"
+    };
+    for (int i = 0; i < list.length; i += 2) {
+      String[] files = new String[]{list[i],list[i+1]};
       work(files);
     }
   }
