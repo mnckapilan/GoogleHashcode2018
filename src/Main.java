@@ -10,7 +10,7 @@ public class Main {
   static Ride[] rides;
 
 
-  public static void main(String[] args) throws FileNotFoundException {
+  public static void main(String[] args){
     String[] list = new String[] {
         "input/a.in", "output/a.out",
         "input/b.in", "output/b.out",
@@ -20,7 +20,11 @@ public class Main {
     };
     for (int i = 0; i < list.length; i += 2) {
       String[] files = new String[]{list[i],list[i+1]};
-      work(files);
+      try {
+        work(files);
+      } catch (FileNotFoundException e) {
+        e.printStackTrace();
+      }
     }
   }
 
